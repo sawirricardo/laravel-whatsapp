@@ -36,8 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sawirricardo\\Whatsapp\\Laravel\\": "src",
-            "Sawirricardo\\Whatsapp\\Laravel\\Database\\Factories\\": "database/factories"
+            "Sawirricardo\\Whatsapp\\Laravel\\": "src"
         },
         "files": [
             "src/helpers.php"
