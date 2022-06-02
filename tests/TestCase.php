@@ -1,35 +1,33 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Sawirricardo\Whatsapp\Laravel\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use Sawirricardo\Whatsapp\Laravel\WhatsappServiceProvider;
 
 class TestCase extends Orchestra
 {
     protected function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            WhatsappServiceProvider::class,
         ];
     }
 
     public function getEnvironmentSetUp($app)
     {
         config()->set('database.default', 'testing');
+        config()->set('whatsapp.token', 'token');
+        config()->set('whatsapp.phone_id', 'phone_id');
+        config()->set('whatsapp.webhook_verify_token', 'webhook_verify_token');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_laravel-whatsapp_table.php.stub';
         $migration->up();
         */
     }

@@ -1,30 +1,31 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "sawirricardo/laravel-whatsapp",
+    "description": "Enhance your laravel apps with WhatsApp's Cloud API",
     "keywords": [
-        ":vendor_name",
+        "sawirricardo",
         "laravel",
-        ":package_slug"
+        "laravel-whatsapp"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/sawirricardo/laravel-whatsapp",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "sawirricardo",
+            "email": "sawir.ricardo@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^9.0"
+        "php": "^7.3 | ^8.0 | ^8.1",
+        "illuminate/contracts": "^7.0 | ^8.0 | ^9.0",
+        "sawirricardo/whatsapp-php": "^0.0.3",
+        "spatie/laravel-package-tools": "^1.7 | ^1.8.0 | ^1.9.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
-        "nunomaduro/collision": "^6.0",
-        "nunomaduro/larastan": "^2.0.1",
-        "orchestra/testbench": "^7.0",
+        "nunomaduro/collision": "^5.0 | ^6.0",
+        "nunomaduro/larastan": "^1.0 | ^2.0.1",
+        "orchestra/testbench": "^6.0 | ^7.0",
         "pestphp/pest": "^1.21",
         "pestphp/pest-plugin-laravel": "^1.1",
         "phpstan/extension-installer": "^1.1",
@@ -35,13 +36,16 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
-        }
+            "Sawirricardo\\Whatsapp\\Laravel\\": "src",
+            "Sawirricardo\\Whatsapp\\Laravel\\Database\\Factories\\": "database/factories"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Sawirricardo\\Whatsapp\\Laravel\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,15 +55,19 @@
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Sawirricardo\\Whatsapp\\Laravel\\WhatsappServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "Whatsapp": "Sawirricardo\\Whatsapp\\Laravel\\Facades\\Whatsapp"
             }
         }
     },
