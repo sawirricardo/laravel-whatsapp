@@ -1,6 +1,3 @@
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
 # Enhance your laravel apps with WhatsApp's Cloud API
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sawirricardo/laravel-whatsapp.svg?style=flat-square)](https://packagist.org/packages/sawirricardo/laravel-whatsapp)
@@ -8,15 +5,14 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/sawirricardo/laravel-whatsapp/Check%20&%20fix%20styling?label=code%20style)](https://github.com/sawirricardo/laravel-whatsapp/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/sawirricardo/laravel-whatsapp.svg?style=flat-square)](https://packagist.org/packages/sawirricardo/laravel-whatsapp)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Use Whatsapp API in your Laravel app!
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-whatsapp.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-whatsapp)
+Investing on this package is defintely a good move from you. You can support by donating to:
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+-   PayPal https://www.paypal.com/paypalme/sawirricardo.
+-   BCA 8330123584
 
 ## Installation
 
@@ -24,13 +20,6 @@ You can install the package via composer:
 
 ```bash
 composer require sawirricardo/laravel-whatsapp
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-whatsapp-migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -43,20 +32,21 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'token' => env('WHATSAPP_TOKEN'),
+
+    'phone_id' => env('WHATSAPP_PHONE_ID'),
+
+    'webhook_verify_token' => env('WHATSAPP_WEBHOOK_VERIFY_TOKEN', 'default'),
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-whatsapp-views"
 ```
 
 ## Usage
 
 ```php
-$whatsapp = new Sawirricardo\Whatsapp();
-echo $whatsapp->echoPhrase('Hello, Sawirricardo!');
+\Sawirricardo\Whatsapp\Laravel\Facades\Whatsapp::create()
+    ->to('+10252423232')
+    ->message(new TextMessageData('Hello world!'))
+    ->send();
 ```
 
 ## Testing
@@ -79,8 +69,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [sawirricardo](https://github.com/sawirricardo)
-- [All Contributors](../../contributors)
+-   [sawirricardo](https://github.com/sawirricardo)
+-   [All Contributors](../../contributors)
 
 ## License
 
