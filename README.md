@@ -1,5 +1,6 @@
 # Enhance your laravel apps with WhatsApp's Cloud API
 
+![Laravel WhatsApp](https://banners.beyondco.de/laravel-whatsapp.png?theme=light&packageManager=composer+require&packageName=sawirricardo%2Flaravel-whatsapp&pattern=architect&style=style_1&description=Enhance+your+laravel+apps+with+WhatsApp&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sawirricardo/laravel-whatsapp.svg?style=flat-square)](https://packagist.org/packages/sawirricardo/laravel-whatsapp)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/sawirricardo/laravel-whatsapp/run-tests?label=tests)](https://github.com/sawirricardo/laravel-whatsapp/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/sawirricardo/laravel-whatsapp/Check%20&%20fix%20styling?label=code%20style)](https://github.com/sawirricardo/laravel-whatsapp/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
